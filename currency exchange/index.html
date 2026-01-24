@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter 2.0</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="countryList.js" defer></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="theme-toggle" id="themeToggle">🌙</div>
+    <div class="wrapper">
+      <h1>💱 Currency Converter</h1>
+      <p class="subtitle">Instantly convert between any currencies</p>
+
+      <input type="number" class="amount" placeholder="Enter amount..." />
+
+      <div class="select-wrapper">
+        <div class="drop-list">
+          <label>From</label>
+          <div class="select-box">
+            <img src="https://flagcdn.com/il.svg" class="flag from-flag" />
+            <select id="from" class="from"></select>
+          </div>
+        </div>
+
+        <img
+          src="swap.svg"
+          width="32"
+          height="32"
+          alt="Swap"
+          class="swap-icon"
+        />
+
+        <div class="drop-list">
+          <label>To</label>
+          <div class="select-box">
+            <img src="https://flagcdn.com/us.svg" class="flag to-flag" />
+            <select id="to" class="to"></select>
+          </div>
+        </div>
+      </div>
+
+      <button class="convert-button">Convert</button>
+      <h3 class="result">Enter amount to begin</h3>
+    </div>
+  </body>
+</html>

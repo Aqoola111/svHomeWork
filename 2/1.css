@@ -1,0 +1,30 @@
+#main-title {
+  font-size: 40px;
+  color: blue;
+}
+
+.highlight {
+  background-color: yellow;
+  font-size: 20px;
+}
+
+.important {
+  font-size: 22px;
+  color: red;
+}
+
+#special-paragraph {
+  background-color: gray;
+}
+
+.custom-font {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: darkgreen;
+  color: white;
+}
+
+/* משימה מספר חמש */
+.highlight:hover {
+  font-size: 24px;
+  transition: 0.3s;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="UTF-8">
+<title>Student Manager</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f4f8;
+        margin: 0;
+        padding: 40px;
+        direction: rtl;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    button {
+        background: #4a90e2;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+    button:hover {
+        background: #3b75b6;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    thead {
+        background: #4a90e2;
+        color: white;
+    }
+
+    th, td {
+        padding: 12px 10px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    tbody tr:nth-child(even) {
+        background: #f6f8fa;
+    }
+
+    tbody tr:hover {
+        background: #eef3ff;
+        transition: 0.2s;
+    }
+
+    .delete-btn {
+        background: #e74c3c;
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+
+    .delete-btn:hover {
+        background: #c0392b;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>מערכת ניהול תלמידים</h2>
+
+    <button onclick="addStudent()">➕ הוספת תלמיד</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>שם פרטי</th>
+                <th>שם משפחה</th>
+                <th>עיר</th>
+                <th>מחיקה</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+    </table>
+</div>
+
+<script>
+
+let students = [
+    { id: 1, first: "דני", last: "כהן", city: "תל אביב" },
+    { id: 2, first: "נועה", last: "לוי", city: "חיפה" },
+    { id: 3, first: "משה", last: "פרץ", city: "ירושלים" },
+    { id: 4, first: "מאיה", last: "רוזן", city: "אשדוד" },
+    { id: 5, first: "איתי", last: "זליגר", city: "תל אביב" },
+    { id: 6, first: "עומר", last: "דיין", city: "רמת גן" },
+    { id: 7, first: "שחר", last: "ברק", city: "בת ים" },
+    { id: 8, first: "רוני", last: "סבן", city: "הרצליה" },
+    { id: 9, first: "לירון", last: "קורן", city: "עפולה" },
+    { id: 10, first: "עמית", last: "גוטמן", city: "נתניה" },
+    { id: 11, first: "תומר", last: "זלצר", city: "תל אביב" },
+    { id: 12, first: "מאור", last: "אדרי", city: "באר שבע" },
+    { id: 13, first: "אילון", last: "חיון", city: "מודיעין" },
+    { id: 14, first: "רועי", last: "בן חור", city: "פתח תקווה" },
+    { id: 15, first: "יהלי", last: "זהבי", city: "רחובות" }
+];
+
+let nextId = 16;
+
+
+function renderTable() {
+    const tbody = document.getElementById("studentTable");
+    tbody.innerHTML = "";
+
+    students.forEach((s) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${s.id}</td>
+            <td>${s.first}</td>
+            <td>${s.last}</td>
+            <td>${s.city}</td>
+            <td><button class="delete-btn" onclick="deleteStudent(${s.id})">🗑️</button></td>
+        `;
+
+        tbody.appendChild(row);
+    });
+}
+
+
+function addStudent() {
+    const first = prompt("שם פרטי:");
+    const last = prompt("שם משפחה:");
+    const city = prompt("עיר:");
+
+    if (!first || !last || !city) return;
+
+    students.push({ id: nextId++, first, last, city });
+    renderTable();
+}
+
+function deleteStudent(id) {
+    students = students.filter(s => s.id !== id);
+    renderTable();
+}
+
+renderTable();
+</script>
+
+</body>
+</html>

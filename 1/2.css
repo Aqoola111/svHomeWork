@@ -1,0 +1,57 @@
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: red;
+  letter-spacing: 2px;
+  word-spacing: 10px;
+}
+
+table {
+  width: 100%;
+  margin: auto;
+}
+
+th {
+  text-decoration: underline;
+  padding: 10px;
+  font-size: x-large;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+form{
+  display: flex;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 300px;
+  justify-self: center;
+  gap: 10px;
+}
+
+input{
+  padding: 5px;
+  border-radius: 10px;
+  border: 0.5px solid gray;
+}
+
+label{
+  font-size: large;
+}
+
+.submit-button{
+  background-color: skyblue;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.submit-button:hover{
+  background-color: deepskyblue;
+  cursor: pointer;
+  scale: 1.05;
+}

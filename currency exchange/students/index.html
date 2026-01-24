@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="UTF-8">
+<title>Student Table</title>
+</head>
+<body>
+
+<h2>טבלת תלמידים</h2>
+
+<button onclick="addStudent()">➕ הוספת תלמיד</button>
+
+<table border="1" cellpadding="8" style="margin-top:15px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>עיר</th>
+            <th>מחיקה</th>
+        </tr>
+    </thead>
+
+    <tbody id="studentTable"></tbody>
+</table>
+
+<script>
+// --- 15 תלמידים קבועים ---
+let students = [
+    { id: 1, first: "דני", last: "כהן", city: "תל אביב" },
+    { id: 2, first: "נועה", last: "לוי", city: "חיפה" },
+    { id: 3, first: "משה", last: "פרץ", city: "ירושלים" },
+    { id: 4, first: "מאיה", last: "רוזן", city: "אשדוד" },
+    { id: 5, first: "איתי", last: "זליגר", city: "תל אביב" },
+    { id: 6, first: "עומר", last: "דיין", city: "רמת גן" },
+    { id: 7, first: "שחר", last: "ברק", city: "בת ים" },
+    { id: 8, first: "רוני", last: "סבן", city: "הרצליה" },
+    { id: 9, first: "לירון", last: "קורן", city: "עפולה" },
+    { id: 10, first: "עמית", last: "גוטמן", city: "נתניה" },
+    { id: 11, first: "תומר", last: "זלצר", city: "תל אביב" },
+    { id: 12, first: "מאור", last: "אדרי", city: "באר שבע" },
+    { id: 13, first: "אילון", last: "חיון", city: "מודיעין" },
+    { id: 14, first: "רועי", last: "בן חור", city: "פתח תקווה" },
+    { id: 15, first: "יהלי", last: "זהבי", city: "רחובות" }
+];
+
+// רינדור טבלה
+function renderTable() {
+    const tbody = document.getElementById("studentTable");
+    tbody.innerHTML = "";
+
+    students.forEach((s) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${s.id}</td>
+            <td>${s.first}</td>
+            <td>${s.last}</td>
+            <td>${s.city}</td>
+            <td><button onclick="deleteStudent(${s.id})">🗑️</button></td>
+        `;
+
+        tbody.appendChild(row);
+    });
+}
+
+// הוספת תלמיד חדש
+let nextId = 16;
+
+function addStudent() {
+    const first = prompt("שם פרטי:");
+    const last = prompt("שם משפחה:");
+    const city = prompt("עיר:");
+
+    if (!first || !last || !city) return;
+
+    students.push({ id: nextId++, first, last, city });
+    renderTable();
+}
+
+// מחיקת תלמיד לפי ID
+function deleteStudent(id) {
+    students = students.filter(s => s.id !== id);
+    renderTable();
+}
+
+renderTable();
+</script>
+
+</body>
+</html>

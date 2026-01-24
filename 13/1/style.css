@@ -1,0 +1,26 @@
+body{
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#input-wrapper{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+#name_paragraph{
+  color: red;
+  text-decoration: underline;
+}
+
+#surname_paragraph{
+  border: black 1px solid;
+  size: 50px;
+}

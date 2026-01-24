@@ -1,0 +1,122 @@
+:root {
+  --page-bg: #FCF9EA;
+  --calc-bg: #FFFFFF;
+
+  --accent-light: #FCF9EA;
+  --accent-mid:   #BADFDB;
+  --accent-dark:  #FFA4A4;
+  --accent-deep:  #FFBDBD;
+
+  --text-main:  #2A2A2A;
+  --text-dark:  #1E1E1E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background: var(--page-bg);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.calculator {
+  width: 360px;
+  background: var(--calc-bg);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid var(--accent-light);
+  border-right-width: 6px;
+  border-right-color: var(--accent-mid);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calculator h1 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+.calculator p {
+  text-align: center;
+  font-size: 14px;
+  color: #6B6B6B;
+}
+
+.display input {
+  width: 100%;
+  padding: 16px;
+  font-size: 26px;
+  border-radius: 12px;
+  border: 1px solid #E4E4E4;
+  background: #FBFBFB;
+  color: var(--text-dark);
+  text-align: right;
+  outline: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px;
+  cursor: pointer;
+  transition: 0.08s ease;
+}
+
+.btn {
+  background: var(--accent-light);
+  color: var(--text-main);
+}
+.btn:hover { filter: brightness(0.97); }
+
+.btn-operator {
+  background: var(--accent-mid);
+  color: var(--text-main);
+}
+.btn-operator:hover { filter: brightness(0.96); }
+
+.clear {
+  background: var(--accent-dark);
+  color: #FFF;
+}
+.clear:hover { filter: brightness(1.05); }
+
+.btn-equal {
+  background: var(--accent-deep);
+  color: #FFF;
+  grid-row: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-equal:hover { filter: brightness(1.07); }
+
+.btn-alt {
+  background: #FCF9EA;
+  color: var(--text-main);
+}
+
+@media (max-width: 420px) {
+  .calculator { width: 92%; }
+  .display input { font-size: 22px; padding: 12px; }
+  button { font-size: 16px; padding: 12px; }
+}
+

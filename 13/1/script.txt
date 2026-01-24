@@ -1,0 +1,19 @@
+const addDiv = (name, surname) => {
+  const newDiv = document.createElement('div')
+  const nameParagraph = document.createElement('p')
+  const surnameParagraph = document.createElement('p')
+  nameParagraph.id = 'name_paragraph'
+  surnameParagraph.id = 'surname_paragraph'
+  nameParagraph.textContent = `Name: ${name}`
+  surnameParagraph.textContent = `Surname: ${surname}`
+  newDiv.appendChild(nameParagraph)
+  newDiv.appendChild(surnameParagraph)
+  document.body.appendChild(newDiv)
+}
+
+document.getElementById('submit_button').addEventListener('click', () => {
+  const nameInput = document.getElementById('name_input').value
+  const surnameInput = document.getElementById('surname_input').value
+  addDiv(nameInput, surnameInput)
+})
+

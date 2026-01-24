@@ -1,0 +1,72 @@
+// ===== INPUT DATA (DO NOT CHANGE) =====
+
+// Task 1
+const numbers = [3, 7, 9, 10, 12, 14, 20, 21]
+
+// Task 2
+const letters = ['A', 'b', 'C', 'd', 'E']
+
+// Task 3
+const chars = ['a', 'b', 'c', 'd', 'e', 'f']
+
+// Task 4
+const ages = [12, 18, 21, 30, 16, 40]
+
+// Task 5
+const numbersToRemove = [2, 4, 1, 2, 7, 2, 8]
+
+// Task 6
+const names1 = ['Tom', 'Adi']
+const names2 = ['Lior', 'Shir']
+
+// ===== SHOW INPUTS =====
+function initInputs() {
+  task1Input.textContent = 'Input: ' + JSON.stringify(numbers)
+  task2Input.textContent = 'Input: ' + JSON.stringify(letters)
+  task3Input.textContent = 'Input: ' + JSON.stringify(chars)
+  task4Input.textContent = 'Input: ' + JSON.stringify(ages)
+  task5Input.textContent = 'Input: ' + JSON.stringify(numbersToRemove)
+  task6Input.textContent = 'Input: ' + JSON.stringify({ names1, names2 })
+}
+
+initInputs()
+
+// Task 1
+function printDivisibleByThree() {
+  const divisibleByThree = numbers.filter((n) => n % 3 === 0)
+  task1Output.textContent = 'Output: ' + JSON.stringify(divisibleByThree)
+}
+
+// Task 2
+function mapLetterCases() {
+  const result = letters.map((l) => {
+    return l === l.toUpperCase() ? 'U' : 'L'
+  })
+  task2Output.textContent = 'Output: ' + JSON.stringify(result)
+}
+
+// Task 3
+function replaceEvenIndexes() {
+  const result = chars.map((char, index) => {
+    return index % 2 === 0 ? index : char
+  })
+  task3Output.textContent = 'Output: ' + JSON.stringify(result)
+}
+
+// Task 4
+function filterAgesOver18() {
+  const result = ages.filter((age) => age > 18)
+  task4Output.textContent = 'Output: ' + JSON.stringify(result)
+}
+
+// Task 5
+function removeElementAtIndexThree() {
+  const result = numbersToRemove.filter((v, i) => i !== 3)
+  task5Output.textContent = 'Output: ' + JSON.stringify(result)
+}
+
+// Task 6
+function mergeNameArrays() {
+  const merged = [...names1, ...names2]
+  task6Output.textContent = 'Output: ' + JSON.stringify(merged)
+}

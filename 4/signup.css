@@ -1,0 +1,70 @@
+body {
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.signup-card {
+  background-color: white;
+  padding: 20px;
+  height: auto;
+  border-radius: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fullname {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  background-color: aliceblue;
+  color: darkgray;
+}
+
+h1, p{
+  margin: 0;
+}
+
+.terms a{
+  text-decoration: none;
+  color: cadetblue;
+}
+
+button{
+  padding: 10px 20px;
+  width: fit-content;
+  background-color: cadetblue;
+  border: none;
+}
+
+button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.separator{
+  height: 1px;
+  background-color: lightgray;
+  margin: 10px 0 20px ;
+}
+
+.signup-header{
+  font-size: large;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 0;
+}

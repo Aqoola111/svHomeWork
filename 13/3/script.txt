@@ -1,0 +1,140 @@
+const students = [
+  {
+    firstName: 'Daniel',
+    lastName: 'Cohen',
+    address: 'Tel Aviv',
+    grades: [85, 90, 78],
+  },
+  {
+    firstName: 'Noa',
+    lastName: 'Levi',
+    address: 'Jerusalem',
+    grades: [92, 88, 95],
+  },
+  {
+    firstName: 'Amit',
+    lastName: 'Mizrahi',
+    address: 'Haifa',
+    grades: [70, 75, 80],
+  },
+  {
+    firstName: 'Yael',
+    lastName: 'Peretz',
+    address: 'Beer Sheva',
+    grades: [88, 84, 90],
+  },
+  {
+    firstName: 'Omer',
+    lastName: 'Biton',
+    address: 'Ashdod',
+    grades: [65, 72, 68],
+  },
+  {
+    firstName: 'Shir',
+    lastName: 'Avraham',
+    address: 'Netanya',
+    grades: [91, 93, 89],
+  },
+  {
+    firstName: 'Eitan',
+    lastName: 'Shapiro',
+    address: 'Ramat Gan',
+    grades: [77, 82, 79],
+  },
+  {
+    firstName: 'Maya',
+    lastName: 'Katz',
+    address: 'Herzliya',
+    grades: [94, 96, 98],
+  },
+  {
+    firstName: 'Itay',
+    lastName: 'Friedman',
+    address: 'Kfar Saba',
+    grades: [83, 85, 80],
+  },
+  {
+    firstName: 'Lior',
+    lastName: 'Goldberg',
+    address: 'Holon',
+    grades: [74, 78, 76],
+  },
+  {
+    firstName: 'Tal',
+    lastName: 'Rosen',
+    address: 'Bat Yam',
+    grades: [69, 71, 73],
+  },
+  {
+    firstName: 'Dana',
+    lastName: 'Weiss',
+    address: 'Rehovot',
+    grades: [88, 91, 90],
+  },
+  {
+    firstName: 'Yonatan',
+    lastName: 'Barak',
+    address: 'Modiin',
+    grades: [86, 84, 88],
+  },
+  {
+    firstName: 'Hila',
+    lastName: 'Segal',
+    address: 'Nahariya',
+    grades: [92, 90, 93],
+  },
+  {
+    firstName: 'Nadav',
+    lastName: 'Sharabi',
+    address: 'Afula',
+    grades: [67, 70, 72],
+  },
+  {
+    firstName: 'Roni',
+    lastName: 'Ziv',
+    address: 'Kiryat Gat',
+    grades: [81, 79, 83],
+  },
+  {
+    firstName: 'Gil',
+    lastName: 'Mor',
+    address: 'Eilat',
+    grades: [75, 78, 80],
+  },
+  {
+    firstName: 'Adi',
+    lastName: 'Nissan',
+    address: 'Yavne',
+    grades: [89, 87, 90],
+  },
+  {
+    firstName: 'Tom',
+    lastName: 'Azulay',
+    address: 'Tiberias',
+    grades: [66, 68, 70],
+  },
+  {
+    firstName: 'Sivan',
+    lastName: 'Harari',
+    address: 'Rosh HaAyin',
+    grades: [93, 95, 94],
+  },
+]
+
+calculateAverage = (grades) => {
+  return grades.reduce((acc, g) => acc + g, 0) / grades.length
+}
+
+const stundentsContainer = document.querySelector('.students')
+const newStudentDiv = document.createElement('div')
+
+students.forEach((student) => {
+  const newStudentDiv = document.createElement('div')
+  newStudentDiv.classList.add('student')
+  newStudentDiv.innerHTML = `
+    <h2>${student.firstName} ${student.lastName}</h2>
+    <p>Address: ${student.address}</p>
+    <p>Average Grade: ${calculateAverage(student.grades).toFixed(2)}</p>
+  `
+  stundentsContainer.appendChild(newStudentDiv)
+})

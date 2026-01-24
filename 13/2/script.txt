@@ -1,0 +1,81 @@
+const products = [
+  {
+    name: 'Wireless Mouse',
+    description: 'A sleek and ergonomic wireless mouse for comfortable use.',
+    price: 29.99,
+  },
+  {
+    name: 'Bluetooth Headphones',
+    description:
+      'Noise-cancelling Bluetooth headphones with high-quality sound.',
+    price: 89.99,
+  },
+  {
+    name: '4K Ultra HD Monitor',
+    description: 'A stunning 27-inch 4K monitor for crystal-clear visuals.',
+    price: 399.99,
+  },
+  {
+    name: 'Mechanical Keyboard',
+    description:
+      'A durable mechanical keyboard with customizable RGB lighting.',
+    price: 79.99,
+  },
+  {
+    name: 'Smartphone Stand',
+    description:
+      'An adjustable stand for your smartphone, perfect for video calls.',
+    price: 15.99,
+  },
+  {
+    name: 'Portable Charger',
+    description: 'A compact portable charger with fast charging capabilities.',
+    price: 24.99,
+  },
+  {
+    name: 'Fitness Tracker',
+    description:
+      'A waterproof fitness tracker that monitors your health and activity.',
+    price: 49.99,
+  },
+  {
+    name: 'Laptop Sleeve',
+    description: 'A stylish and protective sleeve for your laptop.',
+    price: 34.99,
+  },
+  {
+    name: 'Webcam',
+    description: 'A high-definition webcam for clear video streaming.',
+    price: 59.99,
+  },
+  {
+    name: 'USB-C Hub',
+    description: 'A versatile USB-C hub with multiple ports for connectivity.',
+    price: 39.99,
+  },
+]
+
+const renderProducts = (maxPrice) => {
+  const productWrapper = document.querySelector('.product_wrapper')
+  productWrapper.innerHTML = ''
+  const filteredProducts = products.filter(
+    (product) => product.price <= maxPrice
+  )
+  filteredProducts.forEach((product) => {
+    const productDiv = document.createElement('div')
+    productDiv.className = 'product'
+    productDiv.innerHTML = `
+      <h2>${product.name}</h2>
+      <p>${product.description}</p>
+      <p>Price: $${product.price}</p>
+    `
+    productWrapper.appendChild(productDiv)
+  })
+}
+
+document.getElementById('priceInput').addEventListener('input', (event) => {
+  const maxPrice = parseFloat(event.target.value) || Infinity
+  renderProducts(maxPrice)
+})
+
+renderProducts(Infinity)

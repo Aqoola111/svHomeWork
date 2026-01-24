@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <link rel="stylesheet" href="2.css">
+  <meta charset="UTF-8" />
+  <title>title</title>
+</head>
+<body>
+  <h1 class="header">
+    טבלת סניפים של רשת פיצה האט בישראל
+  </h1>
+  <p>
+    להלן טבלה המציגה את סניפי פיצה האט בישראל, כולל העיר, הכתובת והערות נוספות על כל סניף.
+  <table border="1">
+    <tr>
+      <th>עיר</th>
+      <th>כתובת</th>
+      <th>הערות</th>
+    </tr>
+    <tr>
+      <td>תל אביב</td>
+      <td>רחוב דיזנגוף 100</td>
+      <td>הסניף הכי יפה בישראל</td>
+    </tr>
+    <tr>
+      <td>יוקנעם</td>
+      <td>רחוב יוקנעם 1</td>
+      <td>יפה וטעים</td>
+    </tr>
+    <tr>
+      <td>בני ברק</td>
+      <td>רחוב רבי עקיבא 100</td>
+      <td>הסניף הכי כשר בישראל</td>
+    </tr>
+  </table>
+  <img src="map.png" width="1000" height="400" alt="Map of Pizza Hut branches in Israel"/>
+  <a href="https://www.pizzahut.co.il/">Pizza Hut Israel</a>
+  <h2>
+    הוסף סניף חדש לטבלה באמצעות הטופס למטה:
+  </h2>
+  <div>
+    <form>
+      <label for="branch-name">שם הסניף</label>
+      <input type="text" id="branch-name"/>
+      <label for="branch-address">כתובת</label>
+      <input type="text" id="branch-address"/>
+      <label for="branch-employees">כמות עובדים</label>
+      <input type="number" id="branch-employees"/>
+      <button class="submit-button" type="submit"> צור סניף נוסף</button>
+        </form>
+  </div>
+</body>
+</html>

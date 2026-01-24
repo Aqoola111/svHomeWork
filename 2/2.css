@@ -1,0 +1,55 @@
+th{
+  background-color: orange;
+  border: 1px solid orange;
+}
+
+td{
+  background-color: lightyellow;
+  border: 1px solid orange;
+  font-size: large;
+  color: brown;;
+  text-align: center;
+  padding: 5px;
+}
+
+img{
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  padding: 10px;
+}
+
+table{
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+h1{
+  color: orange;
+  text-align: center;
+}
+
+p{
+  font-size: large;
+  color: brown;
+  text-align: center;
+}
+
+ol{
+  font-size: large;
+  color: brown;
+}
+
+h2{
+  color: orange;
+  font-size: xx-large;
+}
+
+body{
+  background-color: lightyellow;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
