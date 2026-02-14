@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ניהול עובדים - MongoDB</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h3>הוספת עובד חדש</h3>
+        <input type="text" id="name" placeholder="שם עובד">
+        <input type="text" id="dept" placeholder="מחלקה">
+        <input type="number" id="age" placeholder="גיל">
+        <input type="number" id="salary" placeholder="שכר">
+        <button class="btn-add" onclick="addEmployee()">הוסף למאגר</button>
+    </div>
+
+    <div class="card">
+        <h3>מחיקה לפי גיל</h3>
+        <input type="number" id="ageLimit" placeholder="מחק את כל מי שמעל גיל...">
+        <button class="btn-delete" onclick="deleteOlder()">מחק עובדים</button>
+    </div>
+
+    <div class="card">
+        <h3>שינוי שם מחלקה</h3>
+        <input type="text" id="oldDept" placeholder="שם מחלקה ישן">
+        <input type="text" id="newDept" placeholder="שם מחלקה חדש">
+        <button class="btn-update" onclick="updateDept()">עדכן מחלקה</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
