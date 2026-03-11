@@ -50,7 +50,17 @@ function Room() {
         if (currentProducts && currentProducts.length >= 5) {
             Swal.fire({
                 text: 'Too much products in one room',
-                icon: 'error'
+                icon: 'error',
+                background: '#222',
+                color: '#ffee00',
+                iconColor: '#00ff44',
+                confirmButtonText: 'GOT IT!',
+                buttonsStyling: false,
+                customClass: {
+                    popup: 'comic-swal-popup',
+                    confirmButton: 'comic-swal-confirm',
+                    title: 'comic-swal-title'
+                }
             })
             return;
         }
@@ -58,7 +68,17 @@ function Room() {
         if (currentRoom.type !== 'Bathroom' && selectedProduct === 'Boiler') {
             Swal.fire({
                 text: `Can not add Boiler to ${currentRoom.type}`,
-                icon: 'error'
+                icon: 'error',
+                background: '#222',
+                color: '#ffee00',
+                iconColor: '#00ff44',
+                confirmButtonText: 'GOT IT!',
+                buttonsStyling: false,
+                customClass: {
+                    popup: 'comic-swal-popup',
+                    confirmButton: 'comic-swal-confirm',
+                    title: 'comic-swal-title'
+                }
             })
             return;
         }
@@ -66,7 +86,17 @@ function Room() {
         if (stereoExists && selectedProduct === 'Stereo System') {
             Swal.fire({
                 text: 'Only one stereo system is enabled in a room',
-                icon: 'warning'
+                icon: 'warning',
+                background: '#222',
+                color: '#ffee00',
+                iconColor: '#00ff44',
+                confirmButtonText: 'GOT IT!',
+                buttonsStyling: false,
+                customClass: {
+                    popup: 'comic-swal-popup',
+                    confirmButton: 'comic-swal-confirm',
+                    title: 'comic-swal-title'
+                }
             })
             return;
         }
