@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Roboto+Condensed:wght@700&display=swap');
+
+:root {
+    --comic-bg: #111;
+    --comic-card: #222;
+    --comic-primary: #ffee00;
+    --comic-on: #00ff44;
+    --comic-off: #ff1100;
+    --comic-accent: #ff00ff;
+    --comic-border: #000;
+    --comic-text: #fff;
+    --font-header: 'Bangers', cursive;
+    --font-sub: 'Permanent Marker', cursive;
+    --font-body: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--comic-bg);
+    color: var(--comic-text);
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: var(--font-header);
+    color: var(--comic-primary);
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0 var(--comic-border);
+}
+
+.home-container h1 {
+    font-size: 5rem;
+    transform: rotate(-3deg);
+    margin-bottom: 50px;
+}
+
+.home-container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 40px;
+}
+
+.share-button {
+    padding: 15px 25px;
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    background-color: var(--comic-accent);
+    color: #000;
+    border: 4px solid var(--comic-border);
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    box-shadow: 8px 8px 0 #000;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.share-button:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 11px 11px 0 #000;
+    filter: brightness(1.2);
+}
+
+.share-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+.rooms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 50px;
+}
+
+.room-card {
+    height: 180px;
+    border: 4px solid var(--comic-border);
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    box-shadow: 12px 12px 0 #000;
+    transition: all 0.1s;
+    overflow: hidden;
+}
+
+.room-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 16px 16px 0 #000;
+}
+
+.room-card a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.room-card h1 {
+    font-size: 2rem;
+    color: #000;
+    text-shadow: none;
+    background: white;
+    padding: 5px 15px;
+    border: 3px solid #000;
+}
+
+.main-add-button {
+    background-color: var(--comic-primary);
+    border: 4px solid var(--comic-border);
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    box-shadow: 10px 10px 0 #000;
+    transition: all 0.1s;
+    cursor: pointer;
+    padding: 0;
+}
+
+.main-add-button a {
+    display: block;
+    padding: 15px 40px;
+    text-decoration: none;
+    color: #000;
+    font-family: var(--font-header);
+    font-size: 2.5rem;
+}
+
+.main-add-button:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 13px 13px 0 #000;
+}
+
+.room-form-wrapper {
+    background: var(--comic-card);
+    padding: 40px;
+    border: 5px solid var(--comic-border);
+    border-right-width: 12px;
+    border-bottom-width: 12px;
+    box-shadow: 15px 15px 0 #000;
+}
+
+.input-box {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label {
+    font-family: var(--font-sub);
+    font-size: 1.5rem;
+    color: var(--comic-primary);
+    margin-bottom: 10px;
+}
+
+.input-box input,
+.input-box select {
+    padding: 12px;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    border: 4px solid var(--comic-border);
+    background: #fff;
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    font-family: var(--font-header);
+    font-size: 2rem;
+    background: var(--comic-on);
+    border: 4px solid var(--comic-border);
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    cursor: pointer;
+}
+
+.room-page-content {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    align-items: flex-start;
+}
+
+.room-page-right {
+    flex: 1;
+    background: var(--comic-card);
+    padding: 30px;
+    border: 5px solid var(--comic-border);
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    height: fit-content;
+    position: sticky;
+    top: 40px;
+}
+
+.room-page-right h1 {
+    font-size: 2.2rem;
+    margin-top: 0;
+}
+
+.back-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    background-color: var(--comic-accent); /* Маджента */
+    color: #000;
+    border: 4px solid var(--comic-border);
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    cursor: pointer;
+    transition: all 0.1s;
+    text-transform: uppercase;
+}
+
+.back-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000;
+    filter: brightness(1.2);
+}
+
+.back-button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+.room-page-left {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    height: fit-content;
+}
+
+.product-button {
+    padding: 20px;
+    font-family: var(--font-sub);
+    font-size: 1.3rem;
+    border: 4px solid var(--comic-border);
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+    box-shadow: 8px 8px 0 #000;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.product-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0 #000;
+}
+
+
+.add-product-button {
+    width: 100%;
+    padding: 10px;
+    font-family: var(--font-header);
+    font-size: 1.8rem;
+    background: var(--comic-primary);
+    border: 4px solid var(--comic-border);
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    margin-bottom: 20px;
+}
+
+.add-product-button.Cancel {
+    background: var(--comic-accent);
+}
+
+.add-product-form select {
+    padding: 12px;
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    border: 4px solid var(--comic-border);
+    background: #fff;
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+}
+
+.add-product-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    background: var(--comic-on);
+    border: 3px solid #000;
+}
+
+.status-on {
+    background-color: var(--comic-on);
+    color: #000;
+}
+
+.status-off {
+    background-color: var(--comic-off);
+    color: #fff;
+}
+
+
+.comic-swal-popup {
+    border: 6px solid #000 !important;
+    border-right-width: 12px !important;
+    border-bottom-width: 12px !important;
+    border-radius: 0 !important;
+    box-shadow: 20px 20px 0 rgba(0,0,0,0.8) !important;
+}
+
+
+.comic-swal-title {
+    font-family: var(--font-header) !important;
+    font-size: 3rem !important;
+    text-transform: uppercase;
+}
+
+
+.comic-swal-confirm {
+    padding: 15px 30px !important;
+    font-family: var(--font-header) !important;
+    font-size: 1.5rem !important;
+    background-color: var(--comic-on) !important;
+    color: #000 !important;
+    border: 4px solid #000 !important;
+    border-right-width: 7px !important;
+    border-bottom-width: 7px !important;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.comic-swal-confirm:hover {
+    filter: brightness(1.1);
+}
